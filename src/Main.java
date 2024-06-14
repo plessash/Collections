@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.Comparator;
 public class Main {
     public static void main(String[] args) {
         MyArrayList<Integer> test = new MyArrayList<Integer>();
@@ -15,11 +13,20 @@ public class Main {
 
         MyArrayList<Integer> test2 = new MyArrayList<Integer>();
 
-        test2.addElement(9345534);
-        test2.addElement(7);
+        test2.addElement(934);
+        test2.addElement(543);
+        test2.addElement(234);
+        test2.addElement(11);
+        test2.addElement(45);
+        test2.addElement(3);
         test.addAll(test2);
 
-        test.removeAll();
+        Comparator<Integer> intComparator = Integer::compareTo;
+        test.bubbleSort(intComparator);
+
+        //test.removeAll();
         test.printDisplay();
+       // test.bubleSort((o1, o2) -> o1.intValue());
+
     }
 }
